@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Parent from './parent'
+import  Conuntercontex  from "./Countercontex";
+import { useState } from 'react';
+
 
 function App() {
+
+//  let [counter,setstate] = useState(1)
+    let counterstate = useState(1);
+      //ab ye array ban gaya [0] contain value and [1] pe funation hai for update
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+     // now we update parent throw child
+    <Conuntercontex.Provider value={counterstate}>
+     {/* set defultvlaue  or update defult value*/}
+
+
+    <div >
+
+            {/* <Parent name="Usman"/> */}
+    
+            <Parent />
+    
     </div>
+    </Conuntercontex.Provider>
+    
   );
 }
 
